@@ -139,7 +139,7 @@ namespace StarWarsPoC.Controllers
                 }
                 else
                 {
-                    return View(addEpisodeToCharacterViewModel);
+                    return Redirect("/Characters/Details?id=" + characterId);
                 }
             }
             else
@@ -186,7 +186,7 @@ namespace StarWarsPoC.Controllers
                 }
                 else
                 {
-                    return View(addFriendToCharacterViewModel);
+                    return Redirect("/Characters/Details?id=" + characterId);
                 }
             }
             else
