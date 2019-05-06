@@ -5,7 +5,7 @@ using StarWarsPoC.Persistence.Repositories;
 using System.Linq;
 using Xunit;
 
-namespace StarWarsPoC.Tests
+namespace StarWarsPoC.Repositories.Tests
 {
     /// <summary>
     /// Unit tests for the PlanetRepository class

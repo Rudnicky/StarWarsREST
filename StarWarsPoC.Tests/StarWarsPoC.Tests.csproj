@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="Moq" Version="4.10.1" />
@@ -17,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StarWarsPoC.Core\StarWarsPoC.Core.csproj" />
     <ProjectReference Include="..\StarWarsPoC.Persistence\StarWarsPoC.Persistence.csproj" />
+    <ProjectReference Include="..\StarWarsPoC\StarWarsPoC.csproj" />
   </ItemGroup>
 
   <ItemGroup>
