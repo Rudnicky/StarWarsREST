@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model StarWarsPoC.Core.ViewModels.ViewCharacterViewModel
+
+@{
+}
+
+<h2>@Model.Character.Name</h2>
+
+<h3>Episodes:</h3>
+<ul>
+    @foreach (var episode in Model.Items)
+    {
+        <li>@episode.Episode.EpisodeName</li>
+
+    }
+</ul>
+
+@if (Model.Items.Count == 0)
+{
+    <p><i>There's none episodes added yet</i></p>
+
+}
+
+@if (Model.Items.Count <= 2)
+{
+    <p>
+        <a asp-controller="Characters" asp-action="AddEpisode" asp-route-id="@Model.Character.Id">Add Episode</a>
+    </p>
+}
+
+<h3>Friends:</h3>
+
+@if (Model.Friends.Count == 0)
+{
+    <p><i>Seems like @Model.Character.Name doesn't have any friends yet</i></p>
+
+}
+
+<ul>
+    @foreach (var friend in Model.Friends)
+    {
+        <li>@friend.Name</li>
+
+    }
+</ul>
+
+<!-- '-1' because of the current character -->
+@if (Model.Friends.Count < Model.NumberOfAvailableFriends - 1)
+{
+    <p>
+        <a asp-controller="Characters" asp-action="AddFriend" asp-route-id="@Model.Character.Id">Add Friend</a>
+    </p>
+}

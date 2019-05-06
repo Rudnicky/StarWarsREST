@@ -1,0 +1,28 @@
+﻿@model StarWarsPoC.Core.ViewModels.AddCharacterViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2>Create</h2>
+
+<h4>Character</h4>
+<hr />
+
+<form asp-controller="Characters" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <input type="submit" value="Create Character" />
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
